@@ -1,81 +1,74 @@
-import java.util.Arrays;
+/*********************************************************
+ * Student.java
+ * John Dean
+ *
+ * This class handles processing of a student's name.
+ *********************************************************/
 
-public class Student {
+import java.util.Scanner;
 
-    private String name;
-    private Integer ID;
-    private String DOB;
-    private double GPA;
-    private String[] courses;
+public class Student
+{
+    private String first = ""; // student's first name
+    private String last = "";  // student's last name
 
-    public String getName() {
-        return name;
+    //*******************************************************
+
+    public Student()
+    { }
+
+    // This constructor verifies that each passed-in name starts with
+    // an uppercase letter and contains lowercase letters thereafter.
+
+    public Student(String first, String last)
+    {
+        setFirst(first);
+        setLast(last);
     }
+    //*******************************************************
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    // This method verifies that first starts with an uppercase
+    // letter and contains lowercase letters thereafter.
 
-    public Integer getID() {
-        return ID;
-    }
+    public void setFirst(String first)
+    {
+        // [A-Z][a-z]* is a regular expression.
+        // See API Pattern class.
+        if (first.matches("[A-Z][a-z]*"))
+        {
+            this.first = first;
+        }
+        else
+        {
+            System.out.println(first + " is an invalid name.\n" +
+                    "Names must start with an uppercase letter and have" +
+                    " lowercase letters thereafter.");
+        }
+    } // end setFirst
+    // This method verifies that last starts with an uppercase
+    // letter and contains lowercase letters thereafter.
 
-    public void setID(Integer iD) {
-        this.ID = iD;
-    }
+    public void setLast(String last)
+    {
+        // [A-Z][a-z]* is a regular expression. See API Pattern class.
+        if (last.matches("[A-Z][a-z]*"))
+        {
+            this.last = last;
+        }
+        else
+        {
+            System.out.println(last + " is an invalid name.\n" +
+                    "Names must start with an uppercase letter and have" +
+                    " lowercase letters thereafter.");
+        }
+    } // end setLast
 
-    public String getDOB() {
-        return DOB;
-    }
+    //*******************************************************
 
-    public void setDOB(String dOB) {
-        this.DOB = dOB;
-    }
+    // Print the student's first and last names.
 
-    public double getGPA() {
-        return GPA;
-    }
-
-    public void setGPA(double gPA) {
-        this.GPA = gPA;
-    }
-
-    public String[] getCourses() {
-        return courses;
-    }
-
-    public void setCourses(String[] courses) {
-        this.courses = courses;
-    }
-
-    public static void main(String[] args) {
-
-        Student student1 = new Student();
-
-        System.out.println("Student Bio [ Before using Accessors & Mutators ]");
-
-        // calling accessor methods
-        System.out.print("Name: " + student1.getName());
-        System.out.print("\tID: " + student1.getID());
-        System.out.print("\tGPA: " + student1.getGPA());
-        System.out.print("\tDOB: " + student1.getDOB());
-        System.out.println("\tCourses: " +  Arrays.toString(student1.getCourses()));
-
-        // calling mutator methods
-        student1.setName("Alex Coy");
-        student1.setID(3115);
-        student1.setGPA(2.79);
-        student1.setDOB("08/08/1998");
-        String[] courses = { "Object Oriented Programming", "Cryptography", "Photography", "Network Security" };
-        student1.setCourses(courses);
-
-        System.out.println("\nStudent Bio [ After using Mutators & Accessors ]");
-
-        // calling accessor methods
-        System.out.print("Name: " + student1.getName());
-        System.out.print("\tID: " + student1.getID());
-        System.out.print("\tGPA: " + student1.getGPA());
-        System.out.print("\tDOB: " + student1.getDOB());
-        System.out.println("\tCourses: " + Arrays.toString(student1.getCourses()));
-    }
-}
+    public void printFullName()
+    {
+        System.out.println(this.first + " " + this.last);
+    } // end printFullName
+} // end class Student
