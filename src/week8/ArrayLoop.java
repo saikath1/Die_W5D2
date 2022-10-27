@@ -1,3 +1,5 @@
+package week8;
+
 public class ArrayLoop {
     public static void main(String[] args) {
         int[] values = new int[5];
