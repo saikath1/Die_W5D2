@@ -6,6 +6,7 @@ public class ArrayCopy2 {
     public static void main(String[] args)
     {
         int a[] = { 1, 8, 3 };
+        System.out.println(a);        // Create an array b[] of same size as a[]
         System.out.println(Arrays.toString(a));        // Create an array b[] of same size as a[]
         int b[] = new int[a.length];
 

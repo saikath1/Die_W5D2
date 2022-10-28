@@ -1,5 +1,5 @@
 package week8;
-
+import java.util.Arrays;
 public class PassArray {
     // main creates array and calls modifyArray and modifyElement
     public static void main(String[] args) {
@@ -9,17 +9,19 @@ public class PassArray {
                         "The values of the original array are:%n");
 
         // output original array elements
-        for (int value : array) {
-            System.out.printf("   %d", value);
-        }
+        System.out.println("Original array is "+Arrays.toString(array));
+//        for (int value : array) {
+//            System.out.printf("   %d", value);
+//        }
 
         modifyArray(array); // pass array reference
         System.out.printf("%n%nThe values of the modified array are:%n");
-
+        System.out.println(Arrays.toString(array));
         // output modified array elements
-        for (int value : array) {
-            System.out.printf("   %d", value);
-        }
+
+//        for (int value : array) {
+//            System.out.printf("   %d", value);
+//        }
 
         System.out.printf(
                 "%n%nEffects of passing array element value:%n" +

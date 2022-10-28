@@ -5,7 +5,7 @@ import  java.util.Arrays;
 public class RollDie {
     public static void main(String[ ] args)
     {
-        int n = 1000, roll;
+        int n = 10, roll;
         int res[] = new int[6];
 
         System.out.println("Total rolls = " + n);
